@@ -12,6 +12,7 @@ interface TagsMenuProps {
 export default function TagsMenu({ tags }: TagsMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+  const close = () => setIsOpen(false);
 
   return (
     <div className={css.menuContainer}>
@@ -21,13 +22,13 @@ export default function TagsMenu({ tags }: TagsMenuProps) {
       {isOpen && (
         <ul className={css.menuList}>
           <li className={css.menuItem}>
-            <Link href={"/notes/filter/all"} className={css.menuLink}>
-              All notes
+            <Link href={"/notes/filter/All"} className={css.menuLink} onClick={close}>
+              All
             </Link>
           </li>
           {tags.map(tag => (
             <li key={tag} className={css.menuItem}>
-              <Link href={`/notes/filter/${tag}`} className={css.menuLink}>
+              <Link href={`/notes/filter/${tag}`} className={css.menuLink} onClick={close}>
                 {tag}
               </Link>
             </li>
