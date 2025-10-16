@@ -6,10 +6,11 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 interface ModalProps {
+  onClose?: () => void;
   children?: React.ReactNode;
 }
 
-export default function Modal({ children }: ModalProps) {
+export default function Modal({ onClose, children }: ModalProps) {
   const router = useRouter();
   const close = () => router.back();
 
