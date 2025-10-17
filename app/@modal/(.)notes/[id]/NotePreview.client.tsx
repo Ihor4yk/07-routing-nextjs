@@ -22,7 +22,7 @@ export default function NotePreviewClient() {
   if (error || !data) return <p>Something went wrong.</p>;
 
   return (
-    <Modal>
+    <Modal onClose={handleClose}>
       <div className={css.container}>
         <button className={css.backBtn} onClick={handleClose}>
           ✕
