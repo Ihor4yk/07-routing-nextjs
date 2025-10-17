@@ -28,6 +28,7 @@ export default function NotePreviewClient() {
           ✕
         </button>
         <h2 className={css.title}>{data.title}</h2>
+        {data.tag && <span className={css.tag}>{data.tag}</span>}
         <p className={css.content}>{data.content}</p>
         <p className={css.date}>{new Date(data.createdAt).toLocaleString()}</p>
       </div>
